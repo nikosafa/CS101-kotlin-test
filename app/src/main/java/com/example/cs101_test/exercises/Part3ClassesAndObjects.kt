@@ -16,6 +16,11 @@ object Part3ClassesAndObjects {
     // ---------------------- EXERCISE 1
     // Create a Book class with 3 attributes: title, author, and price (Double)
     // Add a method to display book details called displayDetails that prints title, author and price
+    class Book(val title: String, val author: String, val price: Double) {
+        fun displayDetails() {
+            println("title: $title, author: $author, price: $price")
+        }
+    }
 
 
     // ---------------------- EXERCISE 2
@@ -28,6 +33,26 @@ object Part3ClassesAndObjects {
     // Create a BankAccount class with the attributes accountNumber, balance (Double), and accountHolder
     // Add methods to deposit, withdraw, and display account details (displayDetails) which must include accountNumber, balance, and accountHolder
     // Ensure that the balance cannot be negative
+
+    class BankAccount(val accountNumber: String, var balance: Double, val accountHolder: String) {
+
+        fun deposit(amount: Double) {
+            balance += amount
+        }
+
+        fun withdraw(amount: Double) {
+            if (amount <= balance) {
+                balance -= amount
+            } else {
+                println("Not enough balance!")
+            }
+        }
+
+        fun displayDetails() {
+            println("Acount Number: $accountNumber, Balance: $balance, Acount Holder: $accountHolder")
+        }
+    }
+
 
 
     // ---------------------- EXERCISE 4

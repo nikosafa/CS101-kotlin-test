@@ -47,5 +47,16 @@ object Part4InheritanceAndAccessModification {
     // The class should have a public field fitnessLevel which uses the private function to return a result.
     // The setter for fitnessLevel should be private
 
-
+    // Athlete class
+    class Athlete(val id: Int, val name: String) {
+        // Skal udregne fitness niveu på et sted mellem 0 og 100
+        private fun calculateFitnessLevel(): Int {
+            return (0..100).random()
+        }
+        //Getter
+        val fitnessLevel: Int
+            get() = calculateFitnessLevel()
+    }
 }
+
+
